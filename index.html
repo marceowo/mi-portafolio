@@ -18,6 +18,8 @@
                 <li><a href="#about-me">About me</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+
             </ul>
         </nav>
     </header>
@@ -53,7 +55,7 @@
                             <span class="tag">JavaScript</span>
                         </div>
                   
-                        <a href="#" target="_blank" rel="noonpener noreferrer" class="btn">Viw project</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="btn">Viw project</a>
                     </div>
             </article>
 
@@ -66,7 +68,7 @@
                         <div class="project-tags">
                             <span class="tag">React</span>
                         </div>
-                           <a href="#" target="_blank" rel="noonpener noreferrer" class="btn">View project</a>
+                           <a href="#" target="_blank" rel="noopener noreferrer" class="btn">View project</a>
                      </div>
             </article>
 
@@ -78,7 +80,7 @@
                     <div class="project-tags">
                         <span class="tag">API</span>
                     </div>
-                    <a href="#" target="_blank" rel="noonpener noreferrer" class="btn">View project</a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="btn">View project</a>
                 </div>
             </article>
 
@@ -88,64 +90,43 @@
         </section>
 
         <section id="contact" aria-labelledby="contact-title">
-         <h2>Contact</h2>
+        <h2>Contact</h2>
 
-            <select aria-labelledby="Forumulario de contacto" novalidate>
+        <form id="contact-form" novalidate>
 
-                <label for="name">Name</label>
-                <input id="name" type="text" placeholder="name" required>
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="Your name" required>
+            <span class="error" id="name-error"></span>
 
-                <!--dropdown-->
-               <label for="reason">Reason for contact</label>
-                 <select id="reason" name="reason">
-                    <option value="">-- Select an option --</option>
-                    <option value="job">Job opportunity</option>
-                    <option value="freelance">Freelance project</option>
-                    <option value="other">Other</option>
+            <label for="reason">Reason for contact</label>
+            <select id="reason" name="reason" required>
+            <option value="">-- Select an option --</option>
+            <option value="job">Job opportunity</option>
+            <option value="freelance">Freelance project</option>
+            <option value="other">Other</option>
+            </select>
 
-                <!--Radio buttons-->
-                <fieldset>
-                    <legend>Preferred contact method</legend>
-                    <label>
-                        <input type="radio" name="contact-method" value="email" checked> Email
-                    </label>
-                    <label>
-                        <input type="radio" name="contact-method" value="linkedin"> LinkedIn
-                    </label>
-                </fieldset>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5"
+            placeholder="Tell me about your project..." required></textarea>
+            <span class="error" id="message-error"></span>
 
-
-                <!--checkboxes-->
-                <fieldset> 
-                    <legend>I'm available for</legend>
-                    <label>
-                        <input type="checkbox" name="availability" value="fulltime"> Full-time
-                    </label>
-                    <label>
-                        <input type="checkbox" name="availability" value="parttime"> Part-time
-                    </label>
-                    <label>
-                        <input type="checkbox" name="availability" value="freelance"> Freelance
-                    </label>
-                </fieldset>
-                 
-                    <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" 
-                        placeholder="Tell me about your project..."></textarea>
-
-                     <button type="submit">Send message</button>
-
-            </form>
+            <button type="submit" class="btn">Send message</button>
+            <p id="form-success" style="display:none; color: var(--color-primary);">
+            ✅ Message sent! I'll get back to you soon.
+            </p>
+        </form>
         </section>
-  </main>
+        
+    </main>
 
   <footer role="contentinfo">
     <ul>
         <li>
-            <a href="https://github.com/marceowo" target= "black" rel="nonpener noreferrer" >Github</a>
+            <a href="https://github.com/marceowo" target= "_blank" rel="noonpener noreferrer" >Github</a>
         </li>
         <li>
-            <a href="https://linkedin.com/in/irisperaza" target="_blanck" rel="noonpener noreferrer">LinkedIn</a>
+            <a href="https://linkedin.com/in/irisperaza" target="_blank" rel="noonpener noreferrer">LinkedIn</a>
         </li>
     </ul>
     <p>Made with love - Iris · 2026</p>
