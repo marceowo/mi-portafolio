@@ -62,4 +62,39 @@ form.addEventListener("submit", (e) => {
         setTimeout(() => successMsg.style.display = "none", 4000);
     } 
 });
+
+// ── FETCH GITHUB REPOS ──────────────────────────────
+async function loadRepos() {
+  const grid = document.querySelector(".projects-grid");
+
+  try {
+    const response = await fetch("https://api.github.com/users/marceowo/repos?sort=updated&per_page=3");
+    const repos = await response.json();
+
+    grid.innerHTML = ""; // limpia las cards estáticas
+
+    repos.forEach((repo) => {
+      grid.innerHTML += `
+        <article class="project-card">
+          <div class="project-img"></div>
+          <div class="project-info">
+            <h3>${repo.name}</h3>
+            <p>${repo.description || "No description yet."}</p>
+            <div class="project-tags">
+              ${repo.language ? `<span class="tag">${repo.language}</span>` : ""}
+            </div>
+            <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer" class="btn">View project</a>
+          </div>
+        </article>
+      `;
+    });
+
+  } catch (error) {
+    console.error("Error loading repos:", error);
+  }
+}
+
+loadRepos();
+
+
 }); 
