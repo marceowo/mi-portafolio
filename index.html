@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Iris Peraza - Frontend Developer</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+
+  <body>
+      <header role="banner">
+        <nav aria-label="Navegación prinicial" >
+            <span class="logo">irisperaza.dev</span>
+            <ul role="list">
+                <li><a href="#about-me">About me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+
+        <section id="hero" aria-labelledby="hero-title">
+            <img src="img/profile.png" alt="Iris Peraza, Frontend Developer">
+            <h1 id="hero-title">Hi! I'm <span class="highlight">Iris Peraza</span></h1>
+            <p>Frontend Developer in training</p>
+            <a href="#projects" class="btn">My work</a>
+        </section>
+   
+
+        <section id="about-me" aria-labelledby="about-title">
+            <h2>About me</h2>
+            <p>Computer Science Engineer building my web development career.</p>
+         </section>
+
+        <section id="projects" aria-labelledby="projects">
+         <h2>Projects</h2>
+        <!-- Aquí irán tus cards de proyectos -->
+        </section>
+
+        <section id="contact" aria-labelledby="contact-title">
+         <h2>Contact</h2>
+
+            <select aria-labelledby="Forumulario de contacto" novalidate>
+
+                <label for="name">Name</label>
+                <input id="name" type="text" placeholder="name" required>
+
+                <!--dropdown-->
+               <label for="reason">Reason for contact</label>
+                 <select id="reason" name="reason">
+                    <option value="">-- Select an option --</option>
+                    <option value="job">Job opportunity</option>
+                    <option value="freelance">Freelance project</option>
+                    <option value="other">Other</option>
+
+                <!--Radio buttons-->
+                <fieldset>
+                    <legend>Preferred contact method</legend>
+                    <label>
+                        <input type="radio" name="contact-method" value="email" checked> Email
+                    </label>
+                    <label>
+                        <input type="radio" name="contact-method" value="linkedin"> LinkedIn
+                    </label>
+                </fieldset>
+
+
+                <!--checkboxes-->
+                <fieldset> 
+                    <legend>I'm available for</legend>
+                    <label>
+                        <input type="checkbox" name="availability" value="fulltime"> Full-time
+                    </label>
+                    <label>
+                        <input type="checkbox" name="availability" value="parttime"> Part-time
+                    </label>
+                    <label>
+                        <input type="checkbox" name="availability" value="freelance"> Freelance
+                    </label>
+                </fieldset>
+                 
+                    <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" 
+                        placeholder="Tell me about your project..."></textarea>
+
+                     <button type="submit">Send message</button>
+
+            </form>
+        </section>
+  </main>
+
+  <footer role="contentinfo">
+    <ul>
+        <li>
+            <a href="https://github.com/marceowo" target= "black" rel="nonpener noreferrer" >Github</a>
+        </li>
+        <li>
+            <a href="https://linkedin.com/in/irisperaza" target="_blanck" rel="noonpener noreferrer">LinkedIn</a>
+        </li>
+    </ul>
+    <p>Made with love - Iris · 2026</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  </body>
+
+
+</html>
