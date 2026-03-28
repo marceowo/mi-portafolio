@@ -4,6 +4,7 @@
     --color-background: #0f1117;
     --color-text: #e2e8f0;
     --font-main: 'Inter', sans-serif;
+    --font-display: 'Syne', sans-serif;
 }
 
 /* reset base */
@@ -11,6 +12,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    
    
 }
 
@@ -88,7 +90,15 @@ nav a:hover {
     font-size: 48px;
     font-weight: 700px;
     line-height: 1.2;
+    font-family: var(--font-display)
 
+}
+
+h2 { 
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
 }
 
 .highlight { 
@@ -193,4 +203,82 @@ footer a:hover {
    color: var(--color-primary);
    border-radius: 20px;
    border: 1px solid rgba(0, 200, 150, 0.2);
+}
+
+
+/* ── FOCUS — accesibilidad con teclado ── */
+:focus,
+button:focus  {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+/* ── SECTION HEADINGS con línea decorativa ── */
+
+h2 {
+  position: relative;
+  display: inline-block;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--color-primary);
+  border-radius: 2px;
+ 
+}
+
+/* ── LOGO hover ── */
+.logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--color-text);
+  transition: color 0.2s;
+}
+
+.logo:hover {
+  color: var(--color-primary);
+}
+
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+
+    header { 
+        padding: 16px 20px;
+    }
+
+    nav { 
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+    }
+nav ul {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  #hero {
+    padding: 48px 20px;
+  }
+
+  #hero h1 {
+    font-size: 32px;
+  }
+
+  section {
+    padding: 40px 20px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  } 
+
+
+  
 }
